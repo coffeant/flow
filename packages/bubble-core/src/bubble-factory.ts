@@ -634,6 +634,7 @@ import {
   HttpBubble, // bubble name: 'http'
   StorageBubble, // bubble name: 'storage'
   ApifyBubble, // bubble name: 'apify'
+  FollowUpBossBubble, // bubble name: 'followupboss'
 
   // Tool Bubbles (Perform useful actions)
   ResearchAgentTool, // bubble name: 'research-agent-tool'
