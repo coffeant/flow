@@ -86,8 +86,6 @@ export class OAuthService {
           clientSecret: env.FUB_OAUTH_CLIENT_SECRET,
           authorizationEndpoint: '/oauth/authorize',
           tokenEndpoint: '/oauth/token',
-          // FUB requires credentials in request body, not Basic Auth header
-          authenticationMethod: 'client_secret_post',
         })
       );
     } else {
@@ -209,6 +207,7 @@ export class OAuthService {
       const token = await client.authorizationCode.getToken({
         code,
         redirectUri,
+        state, // FUB requires state in token exchange
       });
 
       if (!token.refreshToken) {
