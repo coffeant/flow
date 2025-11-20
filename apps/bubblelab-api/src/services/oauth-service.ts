@@ -86,6 +86,8 @@ export class OAuthService {
           clientSecret: env.FUB_OAUTH_CLIENT_SECRET,
           authorizationEndpoint: '/oauth/authorize',
           tokenEndpoint: '/oauth/token',
+          // FUB requires credentials in request body, not Basic Auth header
+          authenticationMethod: 'client_secret_post',
         })
       );
     } else {
